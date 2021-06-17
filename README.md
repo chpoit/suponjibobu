@@ -7,7 +7,7 @@ There is an increasing bias towards uppercasing characters if the previous chara
 
 # Run it:
 ## Online
-Go [here](chpoit.com/suponjibobu) for a web version.
+Go [here](https://chpoit.com/suponjibobu?bobu=true) for a web version.
 
 ## Node
 - Have any version of NodeJS installed (dyno probably works too)
