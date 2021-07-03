@@ -1,4 +1,5 @@
 const suponjibobu = (text) => {
+    const isLetter = (char) => (char.toUpperCase() != char);
     const isUpper = (thresh) => {
         const rnd = Math.random();
         const upper = rnd >= thresh;
@@ -13,9 +14,12 @@ const suponjibobu = (text) => {
     let altered = "";
     let thresh = 0.5;
 
-    for (const char of text) {
-        thresh, upper = isUpper(thresh);
-        altered += upper ? char.toUpperCase() : char;
+    for (let char of text) {
+        if (isLetter(char)) {
+            thresh, upper = isUpper(thresh);
+            char = upper ? char.toUpperCase() : char;
+        }
+        altered += char;
     }
 
     return altered;
@@ -24,14 +28,11 @@ const suponjibobu = (text) => {
 
 if (typeof require !== 'undefined' && require.main === module) {
     const args = process.argv;
-    console.log(__filename)
-    console.log(args)
     let messages = [];
     let startIndex = 1;
     if (args[1] === __filename) {
         startIndex = 2;
     }
-    console.log(startIndex);
     messages = args.slice(startIndex);
 
     if (!!messages.length && !messages[0].includes(" ")) {
